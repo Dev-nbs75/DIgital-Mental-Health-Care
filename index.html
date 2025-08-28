@@ -58,7 +58,6 @@
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             padding: 8px 0;
             height: 7.25vh;
@@ -90,7 +89,6 @@
             display: flex;
             gap: 40px;
             list-style: none;
-            cursor: pointer;
         }
         
         .nav-links a {
@@ -160,40 +158,42 @@
         }
         
         .mentora-title {
-            font-size: 92px;
+            font-size: 122px;
             font-weight: 300;
             color: #333;
             margin-top: -20px;
+            margin-left: -60px;
             font-family: serif;
             font-weight: 600;
         }
         
         .welcome-title {
-            font-size: 41px;
-            margin-top: 34px;
-            margin-left: -40px;
+            font-size: 71px;
+            margin-left: -110px;
             margin-bottom: 10px;
             font-weight: 300;
             color: #333;
             font-family: serif;
         }
         
-        .add-to-calendar {
+        .find-a-doctor {
             background: #ede6c7;
             color: #8b0101;
             padding: 15px 40px;
             border-radius: 25px;
             text-decoration: none;
-            font-size: 16px;
+            font-size: 20px;
             font-weight: 500;
             display: inline-block;
             transition: all 0.3s ease;
+            margin-left: 0;
+            margin-top: 30px;
             border: none;
             cursor: pointer;
             font-weight: 600;
         }
         
-        .add-to-calendar:hover {
+        .find-a-doctor:hover {
             background: #c9ad85;
             transform: translateY(-2px);
         }
@@ -229,6 +229,7 @@
             font-weight: 300;
             color: #2d3748;
             line-height: 1.1;
+            margin-left: 30px;
             margin-bottom: 20px;
         }
         
@@ -241,6 +242,8 @@
         .brain-section {
             background: #fff5f5;
             padding: 40px 0;
+            padding-top: 80px;
+            height: 110vh;
         }
         
         .brain-container {
@@ -277,46 +280,665 @@
             vertical-align: super;
             font-size: 80%;
         }
+        
+        .health-packages-section {
+            background-color: #f9f7f1;
+            padding: 60px 0;
+            padding-top: 120px;
+            height: 110vh;
+            overflow: hidden;
+            background-image: url(paper-beige.CRJgdATq.jpg);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 30px;
+            font-family: 'Merriweather', serif;
+        }
+        
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .packages-carousel {
+            display: flex;
+            gap: 20px;
+            width: calc(400px * 14);
+            animation: infinite-scroll 30s linear infinite;
+        }
+        
+        @keyframes infinite-scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(calc(-400px * 7));
+            }
+        }
+        
+        .package-card {
+            width: 380px;
+            flex-shrink: 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.3s ease;
+            background: white;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-8px);
+        }
+        
+        .card-bg {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.9) contrast(1.1);
+            position: relative;
+        }
+        
+        .card-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+            z-index: 1;
+        }
+        
+        .card-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            color: #333;
+            text-align: center;
+            background: white;
+        }
+        
+        .card-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .card-subtitle {
+            font-size: 14px;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            color: #666;
+        }
+        
+        .card-price {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #c53030;
+        }
+        
+        .card-button {
+            display: inline-block;
+            background: #c53030;
+            border: 2px solid #c53030;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+        
+        .card-button:hover {
+            background: transparent;
+            color: #c53030;
+        }
+        
+        .packages-carousel:hover {
+            animation-play-state: paused;
+        }
+        
+        .mental-services-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            padding-top: 100px;
+        }
+        
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            padding: 0 40px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #ffdba8;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .service-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+            font-family: 'Merriweather', serif;
+        }
+        
+        .service-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .service-price {
+            font-size: 18px;
+            font-weight: 600;
+            color: #c53030;
+            margin-bottom: 25px;
+        }
+        
+        .service-button {
+            display: inline-block;
+            background: #8b0101;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .service-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+        }
+        
+        .find-doctor-section {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+            position: relative;
+            padding-top: 100px;
+            padding-bottom: 168px;
+        }
+        
+        .find-doctor-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+            padding: 0 40px;
+        }
+        
+        .doctor-text {
+            flex: 1;
+            text-align: left;
+        }
+        
+        .doctor-text h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2d3748;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        .highlight-blue {
+            color: #4299e1;
+        }
+        
+        .doctor-text p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+        
+        .search-box {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .doctor-search,
+        .location-input {
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .doctor-search:focus,
+        .location-input:focus {
+            border-color: #4299e1;
+            box-shadow: 0 0 0 2px rgba(66, 153, 225, 0.2);
+        }
+        
+        .location-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .location-icon {
+            font-size: 14px;
+        }
+        
+        .search-button {
+            background-color: #4299e1;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .search-button:hover {
+            background-color: #3182ce;
+            transform: translateY(-2px);
+        }
+        
+        .doctor-image {
+            flex: 1;
+            position: relative;
+            text-align: center;
+        }
+        
+        .doctor-img {
+            width: 350px;
+            height: 450px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #e2e8f0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .icon-circle {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .icon-circle:hover {
+            transform: scale(1.1);
+        }
+        
+        .call {
+            top: -30px;
+            right: 100px;
+        }
+        
+        .video {
+            top: -30px;
+            left: 100px;
+        }
+        
+        .chat {
+            bottom: -30px;
+            left: 100px;
+        }
+        
+        .rating-badge {
+            position: absolute;
+            bottom: 100px;
+            left: 120px;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .rating-badge .star {
+            font-size: 12px;
+            color: #f59e0b;
+        }
+        
+        .patients-badge {
+            position: absolute;
+            bottom: 100px;
+            right: 120px;
+            background: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .patients-badge .heart {
+            font-size: 20px;
+            color: #ef4444;
+            margin-bottom: 4px;
+        }
+        
+        .patients-badge span {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .about-uss {
+            padding: 100px 80px;
+            font-size: 20px;
+        }
+        
+        .about-uss-h1 {
+            font-family: 'Roboto', sans-serif;
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
 <body>
     <header class="header">
         <div class="nav-container">
-            <div class="logo" title="Mentora"><img src="image-removebg-preview.png" class="logo-inner" /></div>
-
+            <div class="logo" title="Mentora">
+                <a href="#"><img src="img/image-removebg-preview.png" class="logo-inner" /></a>
+            </div>
             <nav>
                 <ul class="nav-links">
-                    <li><a>Our Beliefs</a></li>
-                    <li><a>Health Package</a></li>
-                    <li><a>Departments</a></li>
+                    <li><a href="#our-beliefs">Our Beliefs</a></li>
+                    <li><a href="#health-packages">Health Packages</a></li>
+                    <li><a href="#services">Services</a></li>
                 </ul>
             </nav>
-
             <div class="nav-right">
-                <a>About Us</a>
-                <a>Appointment</a>
+                <a href="#find-a-doctor">Find a Doctor</a>
+                <a href="#about-us">About Us</a>
             </div>
         </div>
     </header>
+
     <div class="yuio">
         <main class="main-content">
+            <h1 class="welcome-title">Welcome to</h1>
+            <h1 class="mentora-title">Mentora,</h1>
             <h1 class="convo-title">Sometimes, <span class="highlight">all you need</span> is <br> someone who understands</h1>
-            <a href="#" class="add-to-calendar">Add to Calendar</a>
+            <a href="#find-a-doctor" class="find-a-doctor">Find a Doctor</a>
         </main>
     </div>
-    <section class="brain-section">
+
+    <section class="brain-section" id="our-beliefs">
         <div class="brain-container">
             <span class="brian-icon">🧠</span> <br>
             <h2 class="brain-title">Stay close<br> to your mind.</h2>
-
             <p class="brian-description">
                 Your thoughts flow through you thousands of times per day. Thought by thought, your mental patterns and responses to life's challenges are <span class="highlight-brai0">crucial indicators of your overall wellbeing</span>. <br>With innovative
-                features like mood tracking, personalized therapy sessions,24/7 crisis support, and direct access to licensed professionals, Mentora gives you an invaluable view of your mental health journey.
+                features like mood tracking, personalized therapy sessions, 24/7 crisis support, and direct access to licensed professionals, Mentora gives you an invaluable view of your mental health journey.
             </p>
         </div>
     </section>
-    <div class="subu-bubu"></div>
+
+    <section class="health-packages-section" id="health-packages">
+        <div class="section-title">Our Health Packages</div>
+        <div class="carousel-container">
+            <div class="packages-carousel">
+                <div class="package-card">
+                    <div class="card-bg" style="background-image: url('img/BASIC HEALTH PACKAGE (1).jpg');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Basic Health Package</h3>
+                        <p class="card-subtitle">Comprehensive screening for early detection of common health issues.</p>
+                        <p class="card-price"><strong>NPR 8,500.00</strong> (was NPR 13,000.00)</p>
+                        <a href="#" class="card-button">View Details →</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="card-bg" style="background-image: url('img/comprehensive health checkup.jpg');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Comprehensive Health Checkup</h3>
+                        <p class="card-subtitle">Full-body evaluation including heart, liver, kidney, and diabetes screening.</p>
+                        <p class="card-price"><strong>NPR 13,600.00</strong> (was NPR 18,100.00)</p>
+                        <a href="#" class="card-button">View Details →</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="card-bg" style="background-image: url('img/Heart-Checkup-.jpg');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Cardiac Checkup Package</h3>
+                        <p class="card-subtitle">Advanced cardiac assessment with ECHO, stress test, and blood pressure monitoring.</p>
+                        <p class="card-price"><strong>NPR 8,700.00</strong> (was NPR 11,000.00)</p>
+                        <a href="#" class="card-button">View Details →</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="card-bg" style="background-image: url('img/women health.jpg');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Women's Health (Above 40)</h3>
+                        <p class="card-subtitle">Tailored for women over 40: bone density, breast, and hormonal health checks.</p>
+                        <p class="card-price"><strong>NPR 18,800.00</strong> (was NPR 25,100.00)</p>
+                        <a href="#" class="card-button">View Details →</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="card-bg" style="background-image: url('img/diabetes male.jpg');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Diabetes Management (Male)</h3>
+                        <p class="card-subtitle">Complete screening for diabetes with HbA1c, fasting sugar, and eye check.</p>
+                        <p class="card-price"><strong>NPR 22,800.00</strong> (was NPR 30,400.00)</p>
+                        <a href="#" class="card-button">View Details →</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="card-bg" style="background-image: url('img/executive-check-up-m.jpg');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Executive Health (Male)</h3>
+                        <p class="card-subtitle">For busy professionals: cancer markers, heart health, and wellness check.</p>
+                        <p class="card-price"><strong>NPR 27,800.00</strong> (was NPR 37,100.00)</p>
+                        <a href="#" class="card-button">View Details →</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="card-bg" style="background-image: url('img/Pediatric-Checkup-1-1536x820.png.webp');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Pediatric Health Checkup</h3>
+                        <p class="card-subtitle">Child-friendly screening with growth assessment, vision, and hearing tests.</p>
+                        <p class="card-price"><strong>NPR 6,700.00</strong> (was NPR 9,900.00)</p>
+                        <a href="#" class="card-button">View Details →</a>
+                    </div>
+                </div>
+
+                <div class="package-card">
+                    <div class="card-bg" style="background-image: url('img/BASIC HEALTH PACKAGE (1).jpg');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Basic Health Package</h3>
+                        <p class="card-subtitle">Comprehensive screening for early detection of common health issues.</p>
+                        <p class="card-price"><strong>NPR 8,500.00</strong> (was NPR 13,000.00)</p>
+                        <a href="#" class="card-button">View Details →</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="card-bg" style="background-image: url('img/comprehensive health checkup.jpg');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Comprehensive Health Checkup</h3>
+                        <p class="card-subtitle">Full-body evaluation including heart, liver, kidney, and diabetes screening.</p>
+                        <p class="card-price"><strong>NPR 13,600.00</strong> (was NPR 18,100.00)</p>
+                        <a href="#" class="card-button">View Details →</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="card-bg" style="background-image: url('img/Heart-Checkup-.jpg');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Cardiac Checkup Package</h3>
+                        <p class="card-subtitle">Advanced cardiac assessment with ECHO, stress test, and blood pressure monitoring.</p>
+                        <p class="card-price"><strong>NPR 8,700.00</strong> (was NPR 11,000.00)</p>
+                        <a href="#" class="card-button">View Details →</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="card-bg" style="background-image: url('img/women health.jpg');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Women's Health (Above 40)</h3>
+                        <p class="card-subtitle">Tailored for women over 40: bone density, breast, and hormonal health checks.</p>
+                        <p class="card-price"><strong>NPR 18,800.00</strong> (was NPR 25,100.00)</p>
+                        <a href="#" class="card-button">View Details →</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="card-bg" style="background-image: url('img/diabetes male.jpg');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Diabetes Management (Male)</h3>
+                        <p class="card-subtitle">Complete screening for diabetes with HbA1c, fasting sugar, and eye check.</p>
+                        <p class="card-price"><strong>NPR 22,800.00</strong> (was NPR 30,400.00)</p>
+                        <a href="#" class="card-button">View Details →</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="card-bg" style="background-image: url('img/executive-check-up-m.jpg');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Executive Health (Male)</h3>
+                        <p class="card-subtitle">For busy professionals: cancer markers, heart health, and wellness check.</p>
+                        <p class="card-price"><strong>NPR 27,800.00</strong> (was NPR 37,100.00)</p>
+                        <a href="#" class="card-button">View Details →</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="card-bg" style="background-image: url('img/Pediatric-Checkup-1-1536x820.png.webp');"></div>
+                    <div class="card-content">
+                        <h3 class="card-title">Pediatric Health Checkup</h3>
+                        <p class="card-subtitle">Child-friendly screening with growth assessment, vision, and hearing tests.</p>
+                        <p class="card-price"><strong>NPR 6,700.00</strong> (was NPR 9,900.00)</p>
+                        <a href="#" class="card-button">View Details →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mental-services-section" id="services">
+        <div class="section-title">Our Mental Health Services</div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🧠</div>
+                <h3 class="service-title">Individual Therapy</h3>
+                <p class="service-description">One-on-one sessions with licensed therapists specialized in your unique mental health needs and challenges.</p>
+                <div class="service-price">Starting at NPR 2,500/session</div>
+                <a href="#" class="service-button">Get Started</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚨</div>
+                <h3 class="service-title">24/7 Crisis Support</h3>
+                <p class="service-description">Immediate professional help when you need it most, available round the clock for mental health emergencies.</p>
+                <div class="service-price">Free Emergency Support</div>
+                <a href="#" class="service-button">Access Now</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🧘‍♀️</div>
+                <h3 class="service-title">Mindfulness & Meditation</h3>
+                <p class="service-description">Guided meditation sessions and mindfulness practices to enhance your daily mental wellness and emotional balance.</p>
+                <div class="service-price">NPR 1,200/month</div>
+                <a href="#" class="service-button">Start Practice</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3 class="service-title">Mood Tracking</h3>
+                <p class="service-description">AI-powered insights to understand your emotional patterns, triggers, and mental health progress over time.</p>
+                <div class="service-price">NPR 600/month</div>
+                <a href="#" class="service-button">Track Mood</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="find-doctor-section" id="find-a-doctor">
+        <div class="find-doctor-container">
+            <div class="doctor-text">
+                <h2>Find And Search Your<br><span class="highlight-blue">Suitable Doctor's</span></h2>
+                <p>Join Us and take care of yourself and your family with health services that will make you feel confident and safe in your daily life.</p>
+                <div class="search-box">
+                    <input type="text" placeholder="Find Your Doctor" class="doctor-search">
+                    <div class="location-box">
+                        <i class="location-icon">📍</i>
+                        <input type="text" placeholder="Itahari, Nepal" class="location-input">
+                    </div>
+                    <button class="search-button">Search</button>
+                </div>
+            </div>
+            <div class="doctor-image">
+                <img src="img/doctor-sahab.png" alt="Doctor" class="doctor-img">
+                <div class="icon-circle call"><i class="icon">📞</i></div>
+                <div class="icon-circle video"><i class="icon">🎥</i></div>
+                <div class="icon-circle chat"><i class="icon">💬</i></div>
+                <div class="rating-badge">
+                    <i class="star">⭐⭐⭐⭐⭐</i>
+                </div>
+                <div class="patients-badge">
+                    <i class="heart">❤️</i>
+                    <span>2500+<br>Happy Patients</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="about-uss" id="about-us">
+        <h1 class="about-uss-h1">About Us</h1>
+        <p>
+            Mentora was founded on the simple principle that quality mental healthcare should be accessible, understandable, and free from stigma. We are a team of passionate healthcare professionals, therapists, and technologists dedicated to creating a safe and
+            supportive space for your mental wellness journey. By combining evidence-based therapeutic practices with intuitive technology, we empower you to stay close to your mind and build a healthier, more fulfilling life.
+        </p>
+        <p style="line-height: 40px; margin-top: 50px; color: gray;">Contact no:- 9876543210</p>
+        <p style="color: gray;">Email :- DMwHO@gmail.com</p>
+    </section>
 </body>
 
 </html>
