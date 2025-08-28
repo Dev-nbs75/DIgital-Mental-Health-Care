@@ -145,6 +145,28 @@
             margin-top: 20px;
             margin-bottom: 80px;
         }
+        
+        .yuio {
+            position: relative;
+            min-height: 90vh;
+            width: 100%;
+            z-index: 1;
+        }
+        
+        .yuio::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(https://clinicone.com.np/wp-content/uploads/2020/08/Untitled-design-1024x576-1024x585.png?fbclid=IwZXh0bgNhZW0CMTAAYnJpZBExMHlteGJDc2lsaGRzQXppOAEeVpDBcL1V-AZdv28iCQIQGusmlAsxfbZkwSuAq8nFcHe5WJN3TxGg2GyHHMA_aem_TqDkBBse_xXc08jeuQBnvg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.45;
+            z-index: -1;
+        }
     </style>
     </head>
 
@@ -165,14 +187,13 @@
                 </div>
             </div>
         </header>
-
-        <main class="main-content">
-            <h1 class="welcome-title"> Welcome to</h1>
-            <h1 class="mentora-title"> Mentora,</h1>
-            <p class="slogan">"Empowering you to live a healthier life through expert care and personalized health plans"</p>
-            <p class="slogan">"Empowering you to live a healthier life through expert care and personalized health plans" </p>
-            <a href="#" class="add-to-calendar">Add to Calendar</a>
-        </main>
+        <div class="yuio">
+            <main class="main-content">
+                <h1 class="welcome-title"> Welcome to</h1>
+                <h1 class="mentora-title"> Mentora,</h1>
+                <p class="slogan">"Empowering you to live a healthier life through expert care and personalized health plans"</p> <span class="add-to-calendar">Add to Calendar</span>
+            </main>
+        </div>
     </body>
 
 </html>
